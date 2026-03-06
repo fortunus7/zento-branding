@@ -1,0 +1,70 @@
+@import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'NanumSquareNeo', ui-sans-serif, system-ui, sans-serif;
+  --color-dark-gray: #333333;
+}
+
+@keyframes mesh {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-mesh {
+  background: linear-gradient(
+    -45deg, 
+    #ffffff, 
+    #f3f4f6, 
+    #e5e7eb, 
+    #d1d5db, 
+    #f9fafb, 
+    #e5e7eb
+  );
+  background-size: 400% 400%;
+  animation: mesh 20s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: #666666;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #111827;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
