@@ -16,7 +16,7 @@ const Navbar = () => {
             </a>
           ))}
         </nav>
-        <button 
+        <button
           className="md:hidden p-2 text-gray-900"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -33,9 +33,9 @@ const Navbar = () => {
           >
             <nav className="flex flex-col px-6 py-4 space-y-4">
               {links.map((link) => (
-                <a 
-                  key={link} 
-                  href={`#${link}`} 
+                <a
+                  key={link}
+                  href={`#${link}`}
                   className="text-gray-600 font-bold text-lg hover:text-gray-900"
                   onClick={() => setIsOpen(false)}
                 >
@@ -54,7 +54,7 @@ const Hero = () => {
   return (
     <section id="홈" className="relative min-h-screen flex items-center justify-center bg-mesh pt-20 overflow-hidden">
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -62,7 +62,7 @@ const Hero = () => {
         >
           ZENTO
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,14 +84,14 @@ const Hero = () => {
 
 const Card = ({ title, summary, image, type }: { key?: React.Key, title: React.ReactNode, summary?: string, image: string, type: 'blog' | 'portfolio' }) => {
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ scale: 1.02 }}
       className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 cursor-pointer"
     >
       <div className="aspect-[4/3] overflow-hidden">
-        <img 
-          src={image} 
-          alt={title} 
+        <img
+          src={image}
+          alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           style={{ filter: 'grayscale(85%) contrast(90%) brightness(105%) sepia(10%)' }}
           referrerPolicy="no-referrer"
@@ -160,7 +160,7 @@ const AIPrompts = () => {
     "코드 리뷰 및 리팩토링",
     "블로그 포스팅 개요 잡기",
     "이메일 커뮤니케이션 템플릿",
-    "페르소나 설정 및 인터뷰",
+    "페르소나 설정 및 지시사항",
     "시장 조사 및 경쟁사 분석"
   ];
 
@@ -170,7 +170,7 @@ const AIPrompts = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-16 text-center">AI 프롬프트</h2>
         <div className="flex flex-wrap justify-center gap-4">
           {prompts.map((prompt, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               whileHover={{ y: -4 }}
               className="flex items-center gap-3 bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl shadow-sm cursor-pointer hover:shadow-md hover:border-gray-400 transition-all"
@@ -199,7 +199,7 @@ const RecommendedSites = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-16 text-center">추천 사이트</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {sites.map((site, idx) => (
-            <motion.a 
+            <motion.a
               key={idx}
               href={site.url}
               target="_blank"
@@ -225,12 +225,12 @@ const FAQItem = ({ question, answer }: { key?: React.Key, question: string, answ
 
   return (
     <div className="border-b border-gray-100 last:border-0">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-8 text-left focus:outline-none"
       >
         <span className="text-xl font-medium text-gray-900">{question}</span>
-        <motion.div 
+        <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
           className="flex-shrink-0 ml-4"
